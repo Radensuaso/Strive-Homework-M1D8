@@ -47,6 +47,32 @@
         />
       </form>
     </main>
+    <div>
+      <input type="button" value="changeTitle()" onclick="changeTitle()" />
+      <input
+        type="button"
+        value="addClassToTitle()"
+        onclick="addClassToTitle()"
+      />
+      <input
+        type="button"
+        value="changePcontent()"
+        onclick="changePcontent()"
+      />
+      <input type="button" value="changeUrls()" onclick="changeUrls()" />
+      <input
+        type="button"
+        value="addToTheSecond()"
+        onclick="addToTheSecond()"
+      />
+      <input type="button" value="addParagraph()" onclick="addParagraph()" />
+      <input
+        type="button"
+        value="firstUlDisappear()"
+        onclick="firstUlDisappear()"
+      />
+      <input type="button" value="paintItGreen()" onclick="paintItGreen()" />
+    </div>
 
     <footer onclick="changeFooterText()">
       <p>And this text is just for the exercise too!</p>
@@ -140,7 +166,6 @@
         const blue = Math.floor(Math.random() * 256)
         return `rgb(${red},${green},${blue})`
       }
-      //getRandomColor()
 
       const makeItClickable = function () {
         document.getElementsByTagName("header")[0].style.color =
