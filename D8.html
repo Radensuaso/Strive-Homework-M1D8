@@ -16,35 +16,36 @@
 
     <main>
       <hr />
+      <nav>
+        <ul id="firstList">
+          <li>1st</li>
+          <li>2nd</li>
+          <li>3rd</li>
+        </ul>
 
-      <ul id="firstList">
-        <li>1st</li>
-        <li>2nd</li>
-        <li>3rd</li>
-      </ul>
+        <ul id="secondList">
+          <li>4st</li>
+          <li>5nd</li>
+          <li>6rd</li>
+        </ul>
 
-      <ul id="secondList">
-        <li>4st</li>
-        <li>5nd</li>
-        <li>6rd</li>
-      </ul>
-
-      <a
-        href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school"
-        >This link goes to Strive School</a
-      >
-
-      <div>
-        <p>This text is just for the exercise</p>
-      </div>
-
-      <div>
+        <a
+          href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school"
+          >This link goes to Strive School
+        </a>
+      </nav>
+      <article>
+        <div>
+          <p>This text is just for the exercise</p>
+        </div>
+      </article>
+      <form>
         <input
           type="text"
           id="input-field"
           placeholder="input field for the exercise"
         />
-      </div>
+      </form>
     </main>
 
     <footer onclick="changeFooterText()">
@@ -172,14 +173,19 @@
       */
 
       const inputField = document.getElementById("input-field")
-      // ...
+
+      const logInput = function () {
+        console.log(inputField.value)
+      }
+
+      inputField.onkeypress = logInput
 
       /* EXERCISE 12
       Create a new welcome alert message when the page successfully loads.
       */
 
       window.onload = function () {
-        //
+        alert("Welcome friend.")
       }
 
       /* EXERCISE 13
