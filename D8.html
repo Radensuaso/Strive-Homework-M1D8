@@ -2,6 +2,54 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header onclick="makeItClickable()">
+      <h1>This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </header>
+
+    <main>
+      <hr />
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>4st</li>
+        <li>5nd</li>
+        <li>6rd</li>
+      </ul>
+
+      <a
+        href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school"
+        >This link goes to Strive School</a
+      >
+
+      <div>
+        <p>This text is just for the exercise</p>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          id="input-field"
+          placeholder="input field for the exercise"
+        />
+      </div>
+    </main>
+
+    <footer onclick="changeFooterText()">
+      <p>And this text is just for the exercise too!</p>
+    </footer>
     <script>
       /* EXERCISE 1
       Write a function for changing the title of the document in something else.
@@ -85,17 +133,38 @@
       /* EXERCISE 9
       Make the heading of the page change color every time the user clicks on it.
       */
+      const getRandomColor = function () {
+        const red = Math.floor(Math.random() * 256)
+        const green = Math.floor(Math.random() * 256)
+        const blue = Math.floor(Math.random() * 256)
+        return `rgb(${red},${green},${blue})`
+      }
+      //getRandomColor()
 
       const makeItClickable = function () {
-        //
+        document.getElementsByTagName("header")[0].style.color =
+          getRandomColor()
       }
 
       /* EXERCISE 10
       Change the footer text with something else when the user clicks on it.
       */
 
+      const getRandomPhrase = function () {
+        const arrayOfPhrases = [
+          "What am I doing?",
+          "Is this even real life?",
+          "This footer is constantly changing man!",
+          "What the Hell man?",
+          "Stop it!",
+        ]
+        return arrayOfPhrases[Math.floor(Math.random() * arrayOfPhrases.length)]
+      }
+
       const changeFooterText = function () {
-        //
+        document.getElementsByTagName(
+          "footer"
+        )[0].innerHTML = `<p>${getRandomPhrase()}</p>`
       }
 
       /* EXERCISE 11
@@ -117,54 +186,5 @@
       Use HTML5 tags to divide the content of the page in a more semantic way.
       */
     </script>
-
-    <style>
-      .myHeading {
-        color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>This is the title of the page</h1>
-      <h2>This is the subtitle of the page</h2>
-    </header>
-
-    <main>
-      <hr />
-
-      <ul id="firstList">
-        <li>1st</li>
-        <li>2nd</li>
-        <li>3rd</li>
-      </ul>
-
-      <ul id="secondList">
-        <li>4st</li>
-        <li>5nd</li>
-        <li>6rd</li>
-      </ul>
-
-      <a
-        href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school"
-        >This link goes to Strive School</a
-      >
-
-      <div>
-        <p>This text is just for the exercise</p>
-      </div>
-
-      <div>
-        <input
-          type="text"
-          id="input-field"
-          placeholder="input field for the exercise"
-        />
-      </div>
-    </main>
-
-    <footer>
-      <p>And this text is just for the exercise too!</p>
-    </footer>
   </body>
 </html>
